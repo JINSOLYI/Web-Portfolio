@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/* reset.css */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, address, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6{font-size:100%;}
+img, fieldset{border:0px;}
+table{border-collapse:collapse;}
+ul, ol, li{list-style:none;}
+address, em{font-style:normal;}
+li img, object{vertical-align:top;}
+input, select, textarea, form img{vertical-align:middle;}
+a{ outline:0; text-decoration:none; border:none;}
+body { font: 14px /1.2 "Roboto",sans-serif;, color:#666;}
+body::-webkit-scrollbar {display: none;}
+a:visited{color: #111;}
+a{color: #111;}
+
+/*----------------------------------------------------------*/
+#drag{width: 72px; height: 72px; cursor: pointer; position:relative; z-index: 1005; top:50%; left:0px; transform: translate(0px,-50%);}
+#bound{width: 100%; height: 100px; position:fixed; top:50%; left:0px; background:transparent; z-index: 1000; }
+#scroll_ball{width: 15px; height: 15px; background: red; border-radius: 7.5px; position: relative; z-index: 1000; box-shadow: 5px 5px 5px rgba(0,0,0,0.2);top:50%; left:50%; transform: translate(-50%,-50%);}
+/*---------layout-------------*/
+#header{height: 10vh;display: flex; top: 3vh;margin-left: 5vw; position: fixed; width: 90vw; /*background-color: bisque;*/  justify-content: space-between;}
+#home_logo{display: block; width: 170px; height: 28px;}
+#menu{ display: flex;}
+#menu li{margin-left: 30px;}
+#menu li a{font-size: 0.8rem; font-weight:300; }
+
+
+#nav{/*background-color: aqua; */overflow: hidden; position: fixed; width: 90vw; top: 13vh;/* border-bottom: 0.5px solid #e0e0e0; */left: 5vw; padding-bottom: 2vh;}
+#nav ul{ display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 200;}
+#nav ul li a:hover{color:red;}
+
+
+#footer{ text-align: left; height: 5vh; margin-left: 5vw; position: fixed; bottom: 4vh; font-size: 0.8rem; font-weight: 300;/* background-color: tomato;*/ }
+
+
+#slider {position:relative; height: 60vh; top: 24vh; display: flex; margin-left: 5vw; }
+#slider li a.subtitle{position: relative; top: 5vh; display: block; font-size: 0.9rem;font-weight: 300; width: 100%;}
+#slider li a:nth-child(2) h3{ display: inline-block; font-size: 0.9rem; font-weight: 500; float: left;position: relative; padding-right: 20px;  }
+#slider li a:nth-child(2) h3::after{content: ""; display: block; width: 10px; height: 2px; background: gray;    position: absolute; right: 0px; bottom: 7px;
+}
+#slider li a:nth-child(2) p{display: inline-block; margin-left: 10px;}
+.item{height: 50vh; margin-right: 1.2vw; transition: all 0.5s;
+/*    margin-right: 0.5vw;*/
+}
+/* .item:hover{box-shadow: 5px 5px 5px rgba(0,0,0,0.2);} */
+/*----------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*------------------상세페이지---------------*/
+.description{ margin-top: 26vh; margin-left: 5vw;}
+#slider_secondpage{display: flex; flex-direction: column; float: right; position: relative; margin-right: 5vw; z-index: -1}
+.item_secondpage{ height: auto; width: 45vw;; margin-bottom: 2vh;}
+.aboutcontent{padding-top: 5vh;position: fixed; display: flex;flex-direction: column; }
+#description_subtitle{font-size: 1.2rem;font-weight: 100;
+/*    background-color: aquamarine;*/}
+#description_title{font-weight: 500;font-size: 3rem;
+/*    background-color: aquamarine;*/ margin-top: -1vh;}
+#description_text{margin-top: 28px;    line-height: 1.6rem;font-size: 1.0rem;font-weight: 300;width: 32vw;}
+#year{font-size: 1rem;font-weight: 300;padding: 20px 20px 20px 0; border-bottom: 0.5px dotted gray; margin-bottom: 15px;}
+.aboutcontent h3{margin:12px 0px; }
+
+#menu_icon{display: none; width: 35px; height: 35px;
+background-image: url(image/nav_2.png);}
+#menu_2 {display: none;}
+  /*------------------MEDIA!!!!----------------------*/
+
+@media screen and (max-width: 768px) {
+
+    #drag{display: none;}
+    body{
+    overflow-x: hidden;
+    overflow-y: visible;
+    }
+    #home_logo{
+        position: absolute;
+        top: 3vh;
+        left: 2vh;
+    }
+    #header{
+        position: static;
+        top: 0px;
+        width: 100%;
+        margin: 0 auto;
+        position: fixed;
+        background-color:white;
+        display:inline-block;
+        height: 12vh;
+        z-index: 1;
+    }
+    #menu{display: none;}
+/*
+    #menu{background: rgba(0,0,0,0.5); width: 100%; position: absolute; bottom: 0;}
+    #menu li{margin-left: 0;}
+    #menu li{margin-left:4vw; height: 4vh; line-height: 4vh;}
+    #menu li a:hover{display: block; color: #fff;}
+*/
+
+
+    #nav{
+        margin: 0;
+        position: static;
+        margin-top: 12vh;
+        border: 0;
+        width: 100%;
+    }
+    #menu_icon{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+/*        background-color: red;*/
+        position: absolute;
+        top: 2vh;
+        right: 5vw;
+        display: inline-block;
+        cursor: pointer;
+
+    }
+    .description{ margin-top:12vh; overflow: hidden;}
+    #description_subtitle{font-size: 1.2rem;font-weight: 100; line-height: 2;
+/*    background-color: aquamarine;*/}
+    #description_title{font-weight: 500;font-size: 3rem; line-height: 1.5;
+/*    background-color: aquamarine;*/ margin-top: -1vh;}
+    #slider_secondpage{height: auto;}
+
+    .aboutcontent{top: 12vh;position: inherit;width: 95%;}
+    #description_text{ width: 90vw; font-size: 2.5vh; line-height: 1.4; letter-spacing:1px; text-align:left;}
+   .item_secondpage{width: 100%;height: auto;}
+
+
+
+    #nav ul{height: 0;margin: 0;position: absolute;flex-direction: column;width: 100vw;  overflow: hidden;/* overflow: 히든은 height가 0이됬을때 숨겨줌*/ }
+    #header #nav ul.open{ height: auto;}
+    #nav ul li {
+        position: relative;
+        margin: 0;
+        text-align: left;
+        background:rgba(0,0, 0, 0.5);
+    }
+
+
+     #slider{top: 12vh;height: auto;margin: 0 auto;flex-direction: column; width:92.5vw; }
+    #slider li a.subtitle{position: relative; top:2vh; display: block; font-size: 0.9rem;font-weight: 300; width: 100%;}
+    #slider  li{margin-bottom: 5.5vh;}
+    #slider img{max-width: 100%;height: auto;}
+
+
+
+    #nav ul li a{display: block;margin-left: 4vw;height: 8vh;line-height: 8vh;color: #fff;font-size: 0.8rem;font-weight: 600;}
+    #nav ul li:hover{background:rgba(0,0, 0, 0.8); color: #fff;}
+
+
+
+    #menu_2{ position: relative; bottom: -14vh;display: flex;justify-content: flex-start;font-size: 0.8rem;font-weight: 300; width: 100%;}
+    #menu_2 li{margin-left:3vh;}
+
+
+
+    #footer{ width: 100%; position:relative; bottom: -17vh; margin-left: 4vw; }
+}
